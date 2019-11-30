@@ -31,3 +31,9 @@ C:\Users\{User}\AppData\Roaming\npm-cache（或%appdata%\npm-cache）
 ~~~~
 
 2.windows下安装目录不能是中文，如果是英文不能出现空格
+
+3.编辑setting文件,设置淘宝下载源
+```bash
+node_mirror: https://npm.taobao.org/mirrors/node/
+npm_mirror: https://npm.taobao.org/mirrors/npm/
+```
