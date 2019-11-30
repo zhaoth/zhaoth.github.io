@@ -32,7 +32,7 @@ tar xzvf redis-4.0.8.tar.gz
 ```bash
 	/usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf 
 ```
-### 8.常用命令
+### 8.卸载和启动
 卸载redis：
 ```bash
 	rm -rf /usr/local/redis //删除安装目录
@@ -51,6 +51,30 @@ tar xzvf redis-4.0.8.tar.gz
 	keys *
 	set mykey "tom" 
 	get mykey
+```
+### 10.redis数据操作
+```bash
+elect 1  //选择数据库，配置中会设置数据库数量
+
+info    //查看info信息，包括占用内存，及一些配置信息
+
+info memory  //查看占用内存情况
+
+dbsize  //查看数据库有多少个key
+
+keys *banner* //模糊搜索带banner的key值，因为redis会给key加上前缀，所以在不知道前缀的情况下，先模糊搜索一下
+
+
+
+get keys //指定key获取value值
+
+
+./redis-cli -h 172.18.18.8
+keys *
+del kq:student:token:121c474013ca40748a733ee7eed04bf3
+
+ ./redis-cli  -h 172.18.18.8 keys "course-*" | xargs ./redis-cli i  -h 172.18.18.8 del
+src/redis-cli -h 172.18.18.8 keys "kq:connect:app:*"|xargs src/redis-cli -h 172.18.18.8 del
 ```
 ## redis安装问题
 ### 1. 安装redis出现make[1]: Entering directory '/home/ubuntu/redis-4.0.11/src' CC adlist.o/bin/sh: 1: cc: not foundMakefile:228: recipe for target 'adlist.o' failedmake[1]: *** [adlist.o] Error 127make[1]: Leaving directory '/home/ubuntu/redis-4.0.11/src'Makefile:6: recipe for target 'all' failed
