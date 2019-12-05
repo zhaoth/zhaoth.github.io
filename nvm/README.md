@@ -40,3 +40,19 @@
  ```
 
 4.nodejs目录要在nvm目录下
+
+5.npm不是内部命令
+
+下载对应node的npm sourceCode.zip
+将文件夹名称改成npm
+将npm文件夹中，bin 目录下的npm、npm.cmd文件复制出来
+npm、npm.cmd文件复制到和nodejs同级
+```bash
+nvm -v 查看
+```
+
+6. npx 命令不是内部命令
+```bash
+npm install -g npx
+npx -v
+```
